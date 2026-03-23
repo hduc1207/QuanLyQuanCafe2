@@ -100,8 +100,8 @@ namespace QuanLyQuanCafe
             if (MessageBox.Show($"Bạn có chắc chắn muốn thanh toán hóa đơn này?\nTổng tiền thu: {finalAmount.ToString("N0")} VNĐ", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 BillBUS.Instance.CheckOut(currentBillId, discount);
-
-                MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                IngredientBUS.Instance.TruNguyenLieuTuHoaDon(currentBillId);
+                MessageBox.Show("Thanh toán thành công và Kho đã được tự động trừ nguyên liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

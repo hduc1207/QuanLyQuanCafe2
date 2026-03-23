@@ -113,5 +113,23 @@ namespace QuanLyQuanCafe.DAO
             int count = (int)DataProvider.Instance.ExecuteScalar(query, new object[] { ingredientId });
             return count > 0;
         }
+        // 8. Hàm tự động trừ kho dựa vào ID Hóa Đơn
+        public bool TruNguyenLieuTuHoaDon(int billId)
+        {
+            string query = @"
+                UPDATE I
+                SET I.Quantity = I.Quantity - TotalDeduction.TotalAmount
+                FROM Ingredient I
+                JOIN (
+                    SELECT R.IngredientId, SUM(BI.Quantity * R.Amount) AS TotalAmount
+                    FROM BillInfo BI
+                    JOIN Recipe R ON BI.FoodId = R.FoodId AND BI.Size = R.Size
+                    WHERE BI.BillId = @billId 
+                    GROUP BY R.IngredientId
+                ) AS TotalDeduction ON I.IngredientId = TotalDeduction.IngredientId";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { billId });
+            return result > 0;
+        }
     }
 }

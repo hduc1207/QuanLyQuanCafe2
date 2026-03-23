@@ -63,5 +63,10 @@ namespace QuanLyQuanCafe.BUS
         {
             return IngredientDAO.Instance.IsIngredientUsed(id);
         }
+        // 9. Trừ nguyên liệu khi thanh toán hóa đơn
+        public bool TruNguyenLieuTuHoaDon(int billId)
+        {
+            return QuanLyQuanCafe.DAO.IngredientDAO.Instance.TruNguyenLieuTuHoaDon(billId);
+        }
     }
 }
