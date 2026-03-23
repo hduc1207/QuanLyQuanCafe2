@@ -1,4 +1,5 @@
 ﻿using QuanLyQuanCafe.DTO;
+using QuanLyQuanCafe.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -151,7 +152,14 @@ namespace QuanLyQuanCafe
 
         private void btnquaylai_Click(object sender, EventArgs e)
         {
+            frmMain mainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
 
+            if (mainForm != null)
+            {
+                QLyban fBan = new QLyban();
+                mainForm.OpenChildForm(fBan);
+            }
+            this.Close();
         }
     }
 }

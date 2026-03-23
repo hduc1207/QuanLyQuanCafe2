@@ -107,5 +107,10 @@ namespace QuanLyQuanCafe
         }
         private void label1_Click(object sender, EventArgs e) { }
         private void txttongtien_TextChanged(object sender, EventArgs e) { }
+
+        private void btnquaylai_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

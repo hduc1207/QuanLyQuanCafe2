@@ -116,8 +116,9 @@
             this.txtThuNhap.Margin = new System.Windows.Forms.Padding(4);
             this.txtThuNhap.Name = "txtThuNhap";
             this.txtThuNhap.ReadOnly = true;
-            this.txtThuNhap.Size = new System.Drawing.Size(243, 30);
+            this.txtThuNhap.Size = new System.Drawing.Size(273, 30);
             this.txtThuNhap.TabIndex = 64;
+            this.txtThuNhap.TextChanged += new System.EventHandler(this.txtThuNhap_TextChanged);
             // 
             // panel1
             // 

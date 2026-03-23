@@ -43,25 +43,22 @@ namespace QuanLyQuanCafe.DAO
         }
 
         //2. Thêm công thức
-        public bool InsertRecipe(int foodId, int ingredientId, double amount, string size)
+       public bool InsertRecipe(int foodId, int ingredientId, double amount, string size)
         {
             if (CheckRecipeExists(foodId, ingredientId, size))
                 return false;
-            string query = @"
-                INSERT INTO Recipe (FoodId, IngredientId, Amount, Size) 
-                VALUES (@foodId, @ingredientId, @amount, @size)";
-            int result = DataProvider.Instance.ExecuteNonQuery(query,
-                new object[] { foodId, ingredientId, amount, size });
+            string query = "INSERT INTO Recipe (FoodId, IngredientId, Amount, Size) VALUES ( @foodId , @ingredientId , @amount , @size )";
+            
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { foodId, ingredientId, amount, size });
             return result > 0;
         }
-        //3. Cập nhật công thức
+
+        // 3. Cập nhật công thức
         public bool UpdateRecipe(int recipeId, int foodId, int ingredientId, double amount, string size)
         {
-            string query = @"UPDATE Recipe 
-                SET FoodId = @foodId, IngredientId = @ingredientId, Amount = @amount, Size = @size
-                WHERE RecipeId = @recipeId";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new Object[] { foodId, ingredientId, amount, size, recipeId });
-
+            string query = "UPDATE Recipe SET FoodId = @foodId , IngredientId = @ingredientId , Amount = @amount , Size = @size WHERE RecipeId = @recipeId ";
+            
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { foodId, ingredientId, amount, size, recipeId });
             return result > 0;
         }
 

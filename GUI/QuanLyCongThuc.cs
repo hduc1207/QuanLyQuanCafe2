@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCafe.GUI
 {
-    public partial class QuanLyCongThuc : Form
+    public partial class QuanLyCongThuc : System.Windows.Forms.Form
     {
         public QuanLyCongThuc()
         {

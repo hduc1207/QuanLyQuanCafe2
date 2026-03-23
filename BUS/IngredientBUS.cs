@@ -58,7 +58,7 @@ namespace QuanLyQuanCafe.BUS
             return IngredientDAO.Instance.GetLowIngredient();
         }
 
-        // 8. Lá chắn thép: Kiểm tra nguyên liệu đã được dùng chưa
+        // 8. Kiểm tra nguyên liệu đã được dùng chưa
         public bool IsIngredientUsed(int id)
         {
             return IngredientDAO.Instance.IsIngredientUsed(id);

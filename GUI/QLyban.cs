@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCafe
 {
-    public partial class QLyban : Form
+    public partial class QLyban : System.Windows.Forms.Form
     {
         public QLyban()
         {

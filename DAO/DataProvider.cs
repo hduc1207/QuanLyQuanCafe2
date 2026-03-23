@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Collections.Generic;
 
 namespace QuanLyQuanCafe.DAO
 {
@@ -32,17 +33,7 @@ namespace QuanLyQuanCafe.DAO
                 SqlCommand cmd = new SqlCommand(query, conn);
                 if (parameter != null)
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
-                    {
-                        if (item.Contains("@"))
-                        {
-                            // Loại bỏ dấu phẩy hoặc ký tự thừa dính vào tham số
-                            string cleanParam = item.Replace(",", "").Replace("(", "").Replace(")", "");
-                            cmd.Parameters.AddWithValue(cleanParam, parameter[i++]);
-                        }
-                    }
+                    AddParametersToCommand(cmd, query, parameter);
                 }
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(data);
@@ -61,22 +52,14 @@ namespace QuanLyQuanCafe.DAO
                 SqlCommand cmd = new SqlCommand(query, conn);
                 if (parameter != null)
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
-                    {
-                        if (item.Contains("@"))
-                        {
-                            string cleanParam = item.Replace(",", "").Replace("(", "").Replace(")", "");
-                            cmd.Parameters.AddWithValue(cleanParam, parameter[i++]);
-                        }
-                    }
+                    AddParametersToCommand(cmd, query, parameter);
                 }
                 data = cmd.ExecuteNonQuery();
                 conn.Close();
             }
             return data;
         }
+
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = null;
@@ -89,18 +72,7 @@ namespace QuanLyQuanCafe.DAO
 
                 if (parameter != null)
                 {
-                    string[] listPara = query.Split(' ');
-
-                    int i = 0;
-
-                    foreach (string item in listPara)
-                    {
-                        if (item.Contains("@"))
-                        {
-                            string cleanParam = item.Replace(",", "").Replace("(", "").Replace(")", "");
-                            command.Parameters.AddWithValue(cleanParam, parameter[i++]);
-                        }
-                    }
+                    AddParametersToCommand(command, query, parameter);
                 }
 
                 data = command.ExecuteScalar();
@@ -109,6 +81,35 @@ namespace QuanLyQuanCafe.DAO
             }
 
             return data;
+        }
+
+        /// <summary>
+        /// Extracts parameter names from SQL query and adds them to SqlCommand in order
+        /// </summary>
+        private void AddParametersToCommand(SqlCommand command, string query, object[] parameter)
+        {
+            List<string> parameterNames = new List<string>();
+            HashSet<string> addedParams = new HashSet<string>();
+
+            // Extract all @paramName occurrences using regex
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"@(\w+)");
+            System.Text.RegularExpressions.MatchCollection matches = regex.Matches(query);
+
+            foreach (System.Text.RegularExpressions.Match match in matches)
+            {
+                string paramName = "@" + match.Groups[1].Value;
+                if (!addedParams.Contains(paramName))
+                {
+                    parameterNames.Add(paramName);
+                    addedParams.Add(paramName);
+                }
+            }
+
+            // Add parameters in the order they appear in the query
+            for (int i = 0; i < parameterNames.Count && i < parameter.Length; i++)
+            {
+                command.Parameters.AddWithValue(parameterNames[i], parameter[i]);
+            }
         }
     }
 }

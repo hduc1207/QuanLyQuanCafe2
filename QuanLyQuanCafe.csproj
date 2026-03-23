@@ -175,6 +175,7 @@
     <Compile Include="BUS\BillInfoBUS.cs" />
     <Compile Include="BUS\IngredientBUS.cs" />
     <Compile Include="BUS\FoodBUS.cs" />
+    <Compile Include="BUS\RecipeBUS.cs" />
     <Compile Include="BUS\TableFoodBUS.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
@@ -204,6 +205,12 @@
     </Compile>
     <Compile Include="GUI\dangnhapcfe.Designer.cs">
       <DependentUpon>dangnhapcfe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyNLvsCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyNLvsCT.Designer.cs">
+      <DependentUpon>QuanLyNLvsCT.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmMain.cs">
       <SubType>Form</SubType>
@@ -260,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\dangnhapcfe.resx">
       <DependentUpon>dangnhapcfe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyNLvsCT.resx">
+      <DependentUpon>QuanLyNLvsCT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

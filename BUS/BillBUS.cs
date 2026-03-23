@@ -14,7 +14,7 @@ namespace QuanLyQuanCafe.BUS
         }
         private BillBUS() { }
 
-        // Lấy ID của Hóa đơn chưa thanh toán theo ID Bàn (Nếu không có trả về -1)
+        // Lấy ID của Hóa đơn chưa thanh toán theo ID Bàn
         public int GetUncheckBillByTableID(int id)
         {
             return BillDAO.Instance.GetUnCheckBillByTableId(id);
@@ -32,28 +32,29 @@ namespace QuanLyQuanCafe.BUS
             return BillDAO.Instance.GetMaxBillId();
         }
 
-        // 4. Thanh toán hóa đơn (Không có giảm giá)
+        // 4. Thanh toán hóa đơn
         public void CheckOut(int idBill)
         {
             BillDAO.Instance.CheckOut(idBill);
         }
 
-        // 5. Thanh toán hóa đơn (Có giảm giá)
+        // 5. Thanh toán hóa đơn
         public void CheckOut(int billId, int discount)
         {
             BillDAO.Instance.CheckOut(billId, discount);
         }
 
-        // 6. Lấy danh sách Bill theo ngày (Dùng cho thống kê)
+        // 6. Lấy danh sách Bill theo ngày
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {
             return BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
         }
 
-        // 7. Xem Doanh thu (Dùng cho thống kê)
+        // 7. Xem Doanh thu
         public DataTable GetDoanhThuByDate(DateTime fromDate, DateTime toDate)
         {
             return BillDAO.Instance.GetDoanhThuByDate(fromDate, toDate);
         }
+
     }
 }

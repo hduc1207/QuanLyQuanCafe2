@@ -37,11 +37,11 @@
             this.txtTIenCanThanhToan = new System.Windows.Forms.TextBox();
             this.btnthanhtoan = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtGiamGia = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTienKhachTra = new System.Windows.Forms.TextBox();
             this.txtTienThua = new System.Windows.Forms.TextBox();
+            this.txtTienKhachTra = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtGiamGia = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tblBill)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,6 +59,7 @@
             this.btnquaylai.TabIndex = 22;
             this.btnquaylai.Text = "Quay Lại";
             this.btnquaylai.UseVisualStyleBackColor = false;
+            this.btnquaylai.Click += new System.EventHandler(this.btnquaylai_Click_1);
             // 
             // label3
             // 
@@ -156,27 +157,25 @@
             this.panel2.Size = new System.Drawing.Size(1049, 545);
             this.panel2.TabIndex = 47;
             // 
-            // txtGiamGia
+            // txtTienThua
             // 
-            this.txtGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiamGia.Location = new System.Drawing.Point(123, 81);
-            this.txtGiamGia.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGiamGia.Name = "txtGiamGia";
-            this.txtGiamGia.Size = new System.Drawing.Size(241, 29);
-            this.txtGiamGia.TabIndex = 47;
+            this.txtTienThua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienThua.Location = new System.Drawing.Point(226, 444);
+            this.txtTienThua.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTienThua.Name = "txtTienThua";
+            this.txtTienThua.ReadOnly = true;
+            this.txtTienThua.Size = new System.Drawing.Size(241, 29);
+            this.txtTienThua.TabIndex = 51;
             // 
-            // label2
+            // txtTienKhachTra
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 400);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 24);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Tiền khách trả:";
+            this.txtTienKhachTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienKhachTra.Location = new System.Drawing.Point(226, 400);
+            this.txtTienKhachTra.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTienKhachTra.Name = "txtTienKhachTra";
+            this.txtTienKhachTra.Size = new System.Drawing.Size(241, 29);
+            this.txtTienKhachTra.TabIndex = 50;
+            this.txtTienKhachTra.TextChanged += new System.EventHandler(this.txtTienKhachTra_TextChanged);
             // 
             // label4
             // 
@@ -191,25 +190,27 @@
             this.label4.TabIndex = 49;
             this.label4.Text = "Tiền thừa:";
             // 
-            // txtTienKhachTra
+            // label2
             // 
-            this.txtTienKhachTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienKhachTra.Location = new System.Drawing.Point(226, 400);
-            this.txtTienKhachTra.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTienKhachTra.Name = "txtTienKhachTra";
-            this.txtTienKhachTra.Size = new System.Drawing.Size(241, 29);
-            this.txtTienKhachTra.TabIndex = 50;
-            this.txtTienKhachTra.TextChanged += new System.EventHandler(this.txtTienKhachTra_TextChanged);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 400);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 24);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Tiền khách trả:";
             // 
-            // txtTienThua
+            // txtGiamGia
             // 
-            this.txtTienThua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienThua.Location = new System.Drawing.Point(226, 444);
-            this.txtTienThua.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTienThua.Name = "txtTienThua";
-            this.txtTienThua.ReadOnly = true;
-            this.txtTienThua.Size = new System.Drawing.Size(241, 29);
-            this.txtTienThua.TabIndex = 51;
+            this.txtGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiamGia.Location = new System.Drawing.Point(123, 81);
+            this.txtGiamGia.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGiamGia.Name = "txtGiamGia";
+            this.txtGiamGia.Size = new System.Drawing.Size(241, 29);
+            this.txtGiamGia.TabIndex = 47;
             // 
             // contextMenuStrip1
             // 

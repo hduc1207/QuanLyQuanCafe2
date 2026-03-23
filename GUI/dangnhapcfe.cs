@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCafe
 {
-    public partial class dangnhapcfe : Form
+    public partial class dangnhapcfe : System.Windows.Forms.Form
     {
         public dangnhapcfe()
         {

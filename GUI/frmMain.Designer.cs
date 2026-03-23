@@ -56,14 +56,14 @@
             // 
             this.btndangxuat.BackColor = System.Drawing.Color.White;
             this.btndangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btndangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndangxuat.ForeColor = System.Drawing.Color.Black;
-            this.btndangxuat.Location = new System.Drawing.Point(16, 179);
+            this.btndangxuat.Location = new System.Drawing.Point(31, 152);
             this.btndangxuat.Margin = new System.Windows.Forms.Padding(4);
             this.btndangxuat.Name = "btndangxuat";
-            this.btndangxuat.Size = new System.Drawing.Size(148, 47);
+            this.btndangxuat.Size = new System.Drawing.Size(118, 34);
             this.btndangxuat.TabIndex = 56;
-            this.btndangxuat.Text = "Đăng Xuất";
+            this.btndangxuat.Text = "Đăng xuất";
             this.btndangxuat.UseVisualStyleBackColor = false;
             this.btndangxuat.Click += new System.EventHandler(this.btndangxuat_Click);
             // 
@@ -71,12 +71,12 @@
             // 
             this.btnban.BackColor = System.Drawing.Color.White;
             this.btnban.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnban.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnban.ForeColor = System.Drawing.Color.Black;
-            this.btnban.Location = new System.Drawing.Point(16, 14);
+            this.btnban.Location = new System.Drawing.Point(31, 14);
             this.btnban.Margin = new System.Windows.Forms.Padding(4);
             this.btnban.Name = "btnban";
-            this.btnban.Size = new System.Drawing.Size(148, 47);
+            this.btnban.Size = new System.Drawing.Size(118, 34);
             this.btnban.TabIndex = 53;
             this.btnban.Text = "Bàn";
             this.btnban.UseVisualStyleBackColor = false;
@@ -86,14 +86,14 @@
             // 
             this.btndouong.BackColor = System.Drawing.Color.White;
             this.btndouong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btndouong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndouong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndouong.ForeColor = System.Drawing.Color.Black;
-            this.btndouong.Location = new System.Drawing.Point(16, 69);
+            this.btndouong.Location = new System.Drawing.Point(31, 60);
             this.btndouong.Margin = new System.Windows.Forms.Padding(4);
             this.btndouong.Name = "btndouong";
-            this.btndouong.Size = new System.Drawing.Size(148, 47);
+            this.btndouong.Size = new System.Drawing.Size(118, 34);
             this.btndouong.TabIndex = 54;
-            this.btndouong.Text = "Đồ Uống";
+            this.btndouong.Text = "Đồ uống";
             this.btndouong.UseVisualStyleBackColor = false;
             this.btndouong.Click += new System.EventHandler(this.btndouong_Click);
             // 
@@ -101,14 +101,14 @@
             // 
             this.btnthongke.BackColor = System.Drawing.Color.White;
             this.btnthongke.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnthongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnthongke.ForeColor = System.Drawing.Color.Black;
-            this.btnthongke.Location = new System.Drawing.Point(16, 124);
+            this.btnthongke.Location = new System.Drawing.Point(31, 106);
             this.btnthongke.Margin = new System.Windows.Forms.Padding(4);
             this.btnthongke.Name = "btnthongke";
-            this.btnthongke.Size = new System.Drawing.Size(148, 47);
+            this.btnthongke.Size = new System.Drawing.Size(118, 34);
             this.btnthongke.TabIndex = 55;
-            this.btnthongke.Text = "Thống Kê";
+            this.btnthongke.Text = "Thống kê";
             this.btnthongke.UseVisualStyleBackColor = false;
             this.btnthongke.Click += new System.EventHandler(this.btnthongke_Click);
             // 

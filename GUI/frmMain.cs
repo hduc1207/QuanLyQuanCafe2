@@ -12,13 +12,13 @@ namespace QuanLyQuanCafe.GUI
 {
     public partial class frmMain : System.Windows.Forms.Form
     {
-        private Form activeForm = null;
+        private System.Windows.Forms.Form activeForm = null;
 
         public frmMain()
         {
             InitializeComponent();
         }
-        public void OpenChildForm(Form childForm)
+        public void OpenChildForm(System.Windows.Forms.Form childForm)
         {
             if (activeForm != null)
             {
